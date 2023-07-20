@@ -1,0 +1,59 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    generate-unique-name: false
+    hikari:
+      maximum-pool-size: 4
+  redis:
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+    host: 127.0.0.1
+    port: 13004
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  mvc:
+    encoding:
+      charset: UTF-8
+      enabled: true
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  charset=UTF-8:
+
+springdoc:
+  version: v1.0.0
+  packages-to-scan: com.hailey.search.api
+  swagger-ui:
+    path: /api-docs
+    tags-sorter: alpha
+  api-docs:
+    path: /api-docs/json
+    groups:
+      enabled: true
+    cache:
+      disabled: true
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+
+kakao:
+  api:
+    url: https://dapi.kakao.com
+    uri: /v2/local/search/keyword
+    key: c883282f9e6b6474d9cbfff7745e91cb
+naver:
+  api:
+    url: https://openapi.naver.com
+    uri: /v1/search/local.json
+    secret: Gtoa3aaKLf
+    id: QkcW870ApambkXZb4khf

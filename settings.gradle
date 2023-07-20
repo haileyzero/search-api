@@ -1,0 +1,4 @@
+rootProject.name = 'search'
+
+include 'search-core'
+include 'search-api'
